@@ -8,15 +8,15 @@ import (
 
 func attack(charName, charClass string) string {
 	if charClass == "warrior" {
-		return fmt.Sprintf("%s нанес урон противнику равный %d.", charName, 5+randint(3, 5))
+		return fmt.Sprintf("%s нанес урон противнику равный %d.", charName, randint(8, 10))
 	}
 
 	if charClass == "mage" {
-		return fmt.Sprintf("%s нанес урон противнику равный %d.", charName, 5+randint(5, 10))
+		return fmt.Sprintf("%s нанес урон противнику равный %d.", charName, randint(10, 15))
 	}
 
 	if charClass == "healer" {
-		return fmt.Sprintf("%s нанес урон противнику равный %d.", charName, 5+randint(-3, -1))
+		return fmt.Sprintf("%s нанес урон противнику равный %d.", charName, randint(2, 4))
 	}
 	return "неизвестный класс персонажа"
 }
@@ -24,12 +24,12 @@ func attack(charName, charClass string) string {
 // обратите внимание на "if else" и на "else"
 func defence(char_name, char_class string) string {
 	if char_class == "warrior" {
-		return fmt.Sprintf("%s блокировал %d урона.", char_name, 10+randint(5, 10))
-	} else if char_class == "mage" {
-		return fmt.Sprintf("%s блокировал %d урона.", char_name, 10+randint(-2, 2))
-	} else if char_class == "healer" {
-		return fmt.Sprintf("%s блокировал %d урона.", char_name, 10+randint(2, 5))
-	} else {
+		return fmt.Sprintf("%s блокировал %d урона.", char_name, randint(15, 20))
+	}  char_class == "mage" {
+		return fmt.Sprintf("%s блокировал %d урона.", char_name, randint(8, 12))
+	}  char_class == "healer" {
+		return fmt.Sprintf("%s блокировал %d урона.", char_name, randint(12, 15))
+	} 
 		return "неизвестный класс персонажа"
 	}
 }
@@ -98,11 +98,11 @@ func choise_char_class() string {
 		fmt.Scanf("%s\n", &char_class)
 		if char_class == "warrior" {
 			fmt.Println("Воитель — дерзкий воин ближнего боя. Сильный, выносливый и отважный.")
-		} else if char_class == "mage" {
+		case char_class == "mage" {
 			fmt.Println("Маг — находчивый воин дальнего боя. Обладает высоким интеллектом.")
-		} else if char_class == "healer" {
+		case  char_class == "healer" {
 			fmt.Println("Лекарь — могущественный заклинатель. Черпает силы из природы, веры и духов.")
-		}
+		xase
 		fmt.Print("Нажми (Y), чтобы подтвердить выбор, или любую другую кнопку, чтобы выбрать другого персонажа: ")
 		fmt.Scanf("%s\n", &approve_choice)
 		approve_choice = strings.ToLower(approve_choice)
